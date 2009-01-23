@@ -8,8 +8,8 @@ use File::Copy;
 use Getopt::Long;
 use Carp;
 
-our $VERSION = 0.30;
-our $SVN = 5184;
+our $VERSION = 0.31;
+our $SVN = 5236;
 our %config;
 
 #these are all default configs
@@ -135,7 +135,6 @@ sub parse_options {
         $options{$key} = $default_value if(defined $default_value);
     }
     GetOptions(\%options, keys %option_keys);
-    print Dumper(\%options);
     $self->options(\%options);
     $self->options_desc(\%option_keys);
     $self->assign_options(qw(user group name chroot foreground daemon pidfile));
